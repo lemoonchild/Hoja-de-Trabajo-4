@@ -1,6 +1,5 @@
 package Controller;
 import java.util.ArrayList;
-import java.util.Stack;
 
 import Model.Calculator.PostfixCalculator;
 import Model.Calculator.SingletonException;
@@ -16,22 +15,8 @@ import Model.Stack.IStack;
 
 public class Calculadora<T> {
 
-    private static Stack<Integer> stack;
-
     static PostfixCalculator calculadora; 
-
     static ArrayList<String> operaciones;
-
-    Stack pila = new Stack<T>(); 
-
-    /**
-     * Constructor de la calculadora 
-     */
-    public Calculadora() {
-
-        stack = new Stack<Integer>();
-
-    }
 
     /**
      * Metodo que guarda en la pila los elememtos del ArrayList y realiza las operaciones cuando encuentra un operando (solo con los primeros dos elementos)
@@ -43,7 +28,7 @@ public class Calculadora<T> {
         try {
             
             calculadora = PostfixCalculator.getInstance(); 
-        
+
             operaciones = calculadora.getItems(Firstpostfix); 
     
             for (int i = 0; i < operaciones.size(); i++) {

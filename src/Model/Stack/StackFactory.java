@@ -2,6 +2,11 @@ package Model.Stack;
 
 public class StackFactory {
     
+    /**
+     * Realiza la implementacion de Factory para los tipos de Stack
+     * @param userStack seleccion de usuario para stack que desea utilizar 
+     * @return tipo stack seleccionado por usuario 
+     */
     public IStack<Integer> getTypeStack(String userStack){
 
         IStack<Integer> typeStack; 
@@ -15,10 +20,10 @@ public class StackFactory {
             case "vector": 
                 typeStack = new StackVector<>();
                 break; 
-            case "double linked list": 
+            case "double": 
                 typeStack = new StackDoubleLinkedList<>();
                 break;
-            case "single linked list": 
+            case "single": 
                 typeStack = new StackSingleLinkedList<>();
                 break;
             default: 

@@ -12,37 +12,37 @@ import Model.SingleLinkedList;
 
 public class StackSingleLinkedList<T> implements IStack<T> {
 
-	private SingleLinkedList<T> listaInterna;
+	private SingleLinkedList<T> listasingle;
 	
 	public StackSingleLinkedList(){
 
-		listaInterna = new SingleLinkedList<T>();
+		listasingle = new SingleLinkedList<T>();
 
 	}
 	
 	@Override
 	public int count() {
-		return listaInterna.Count();
+		return listasingle.Count();
 	}
 
 	@Override
 	public boolean isEmpty() {
-		return listaInterna.IsEmpty();
+		return listasingle.IsEmpty();
 	}
 
 	@Override
 	public void push(T value) {
-		listaInterna.InsertAtStart(value);
+		listasingle.InsertAtStart(value);
 	}
 
 	@Override
 	public T pull() {
-		return listaInterna.Delete(0);
+		return listasingle.Delete(0);
 	}
 
 	@Override
 	public T peek() {
-		return listaInterna.Get(0);
+		return listasingle.Get(0);
 	}
 
 }

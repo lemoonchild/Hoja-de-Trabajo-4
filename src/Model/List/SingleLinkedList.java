@@ -220,7 +220,6 @@ public class SingleLinkedList<T> implements IList<T> {
 
 	@Override
 	public int Count() {
-		// TODO Auto-generated method stub
 		return count;
 	}
 

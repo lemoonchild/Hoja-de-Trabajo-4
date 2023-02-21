@@ -10,11 +10,16 @@ package Model.Calculator;
 
 public class SingletonException extends RuntimeException {
 	
-	//new exception type for singleton classes
+	
+	/**
+	 * Clase Exception para singleton
+	 */
 	public SingletonException(){
 		super();
 	}
-	
+	/**
+	 * Clase Exception para singleton
+	 */
 	public SingletonException(String s){
 		super(s);
 	}

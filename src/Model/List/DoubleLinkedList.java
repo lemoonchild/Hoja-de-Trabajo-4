@@ -10,6 +10,9 @@ public class DoubleLinkedList<T> implements IList<T> {
 	private DoubleNode<T> end;
 	private int count;
 	
+	/**
+	 * Constructor de la clase
+	 */
 	public DoubleLinkedList() {
 		start = null;
 		end = null;

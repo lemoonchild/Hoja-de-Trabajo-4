@@ -12,37 +12,37 @@ import Model.DoubleLinkedList;
 
 public class StackDoubleLinkedList<T> implements IStack<T> {
 
-	private DoubleLinkedList<T> listaInterna;
+	private DoubleLinkedList<T> listadouble;
 	
 	public StackDoubleLinkedList() {
 
-		listaInterna = new DoubleLinkedList<T>();
+		listadouble = new DoubleLinkedList<T>();
 
 	}
 	
 	@Override
 	public int count() {
-		return listaInterna.Count();
+		return listadouble.Count();
 	}
 
 	@Override
 	public boolean isEmpty() {
-		return listaInterna.IsEmpty();
+		return listadouble.IsEmpty();
 	}
 
 	@Override
 	public void push(T value) {
-		listaInterna.InsertAtStart(value);
+		listadouble.InsertAtStart(value);
 	}
 
 	@Override
 	public T pull() {
-		return listaInterna.DeleteAtStart();
+		return listadouble.DeleteAtStart();
 	}
 
 	@Override
 	public T peek() {
-		return listaInterna.Get(0);
+		return listadouble.Get(0);
 	}
 
 	

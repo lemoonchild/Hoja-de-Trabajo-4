@@ -3,7 +3,7 @@ package UI;
 import java.util.Scanner;
 
 import Controller.Calculadora;
-import Controller.infixToPostix;
+import Controller.infixToPostfix;
 import Model.Stack.StackFactory;
 
 /**
@@ -21,7 +21,7 @@ public class UI {
     static StackFactory factory = new StackFactory(); 
     static Calculadora cal = new Calculadora(); 
 
-    infixToPostix infix = new infixToPostix();
+    infixToPostfix infix = new infixToPostfix();
 
     public static void main(String[] args) {
         
@@ -34,27 +34,30 @@ public class UI {
 
 String operationsInfix = readFile._readfile("C:\\Users\\ncast\\OneDrive\\Documentos\\Universidad\\Semestres\\Tercer Semestre\\Algoritmos y Estructura de Datos\\Hojas de Trabajo\\Hoja-de-Trabajo-4\\src\\datos.txt");  
 
-        System.out.println("Expresion Infija: " + operationsInfix);
+        System.out.println("\nExpresion Infija: " + operationsInfix);
         
-        String raw_input = infixToPostix.converterPostfix(operationsInfix).toString();
+        String raw_input = infixToPostfix.converterPostfix(operationsInfix).toString();
         
-        raw_input=raw_input.replace("[", "");
-        raw_input=raw_input.replace("]", "");
-        raw_input=raw_input.replace(",", "");
-        raw_input=raw_input.replace(" ", "");
+        raw_input=raw_input.replace("[", " ");
+        raw_input=raw_input.replace("]", " ");
+        raw_input=raw_input.replace(",", " ");
+        raw_input=raw_input.replace(" ", " ");
 
         System.out.println("Expresion Postfija: " + raw_input);
 
         System.out.println("\nBienvenido a la Calculadora Postfix");
-        System.out.println("¿Qué tipo de Stack le gustaría utilizar? (No seleccionar número)");
+        System.out.println("¿Qué tipo de Stack le gustaría utilizar? Escriba su opcion por favor.");
         System.out.println("1. ArrayList");
         System.out.println("2. Vector");
-        System.out.println("3. Single Linked List");
-        System.out.println("4. Double Linked List");
+        System.out.println("3. Single Linked List (solo escribir la palabra single)");
+        System.out.println("4. Double Linked List (solo escribir la palabra double)");
 
+        System.out.println();
         String op = sc.next(); 
 
-        Calculadora.calculate(raw_input, factory.getTypeStack(op)); 
+        
+        System.out.println("\nResultado de la operacion: " + Calculadora.calculate(raw_input, factory.getTypeStack(op)));
+        
 
         
     }
