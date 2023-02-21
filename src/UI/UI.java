@@ -1,4 +1,10 @@
+package UI;
+
 import java.util.Scanner;
+
+import Controller.Calculadora;
+import Controller.infixToPostix;
+import Model.Stack.StackFactory;
 
 /**
  * @author 
@@ -11,27 +17,45 @@ import java.util.Scanner;
 public class UI {
     
     static Scanner sc = new Scanner(System.in); 
-    static readFile readFile = new readFile();
+    static Controller.readFile readFile = new Controller.readFile();
+    static StackFactory factory = new StackFactory(); 
+    static Calculadora cal = new Calculadora(); 
 
-    Calculadora calculadora = new Calculadora(); 
+    infixToPostix infix = new infixToPostix();
 
     public static void main(String[] args) {
         
+        menuPrincipal(); 
+        
     }
 
-    public void menuPrincipal(){
+    public static void menuPrincipal(){
         
-        String postfix = readFile._readfile("datos.txt");
+
+String operationsInfix = readFile._readfile("C:\\Users\\ncast\\OneDrive\\Documentos\\Universidad\\Semestres\\Tercer Semestre\\Algoritmos y Estructura de Datos\\Hojas de Trabajo\\Hoja-de-Trabajo-4\\src\\datos.txt");  
+
+        System.out.println("Expresion Infija: " + operationsInfix);
+        
+        String raw_input = infixToPostix.converterPostfix(operationsInfix).toString();
+        
+        raw_input=raw_input.replace("[", "");
+        raw_input=raw_input.replace("]", "");
+        raw_input=raw_input.replace(",", "");
+        raw_input=raw_input.replace(" ", "");
+
+        System.out.println("Expresion Postfija: " + raw_input);
 
         System.out.println("\nBienvenido a la Calculadora Postfix");
-        System.out.println("¿Qué tipo de Stack le gustaría utilizar?");
+        System.out.println("¿Qué tipo de Stack le gustaría utilizar? (No seleccionar número)");
         System.out.println("1. ArrayList");
-        System.out.println("2. List");
-        System.out.println("3. Vector");
+        System.out.println("2. Vector");
+        System.out.println("3. Single Linked List");
+        System.out.println("4. Double Linked List");
 
-        System.out.println("\n\tOperación a realizar: " + postfix);
+        String op = sc.next(); 
 
-        System.out.println("\tResultado obtenido: " + Calculadora.calculate(postfix) + "\n");
+        Calculadora.calculate(raw_input, factory.getTypeStack(op)); 
 
+        
     }
 }
