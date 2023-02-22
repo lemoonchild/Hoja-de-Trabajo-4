@@ -6,7 +6,10 @@ import Model.List.SingleLinkedList;
 
 
 public class ListFactory<T> {
-    
+    /**
+     * Realizacion del factory para el Stack de Lista
+     * @return tipo de Lista a usar dentro del Stack
+     */
     public AbstractList<T> getInstance(String userStack){
 
         AbstractList<T> typeList = null; 

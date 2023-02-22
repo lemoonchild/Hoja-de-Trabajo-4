@@ -3,13 +3,6 @@ import java.util.ArrayList;
 
 import Model.Stack.StackArrayList;
 
-
-/**
-* @author Harnoor Singh
- * Date: Oct 31, 2017
- * URL: https://github.com/iharnoor/InfixToPostFix-Calculator/blob/master/calc.java 
- */
-
 public class infixToPostfix{
     
     /**
