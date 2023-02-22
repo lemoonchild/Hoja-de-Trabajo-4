@@ -1,4 +1,9 @@
-package Model.Stack;
+package Model;
+
+import Model.Stack.IStack;
+import Model.Stack.StackArrayList;
+import Model.Stack.StackList;
+import Model.Stack.StackVector;
 
 public class StackFactory {
     
@@ -16,19 +21,19 @@ public class StackFactory {
             case "arraylist": 
                 typeStack = new StackArrayList<>();
                 break; 
-            
             case "vector": 
                 typeStack = new StackVector<>();
                 break; 
             case "double": 
-                typeStack = new StackDoubleLinkedList<>();
+                typeStack = new StackList<>(userStack);
                 break;
             case "single": 
-                typeStack = new StackSingleLinkedList<>();
+                typeStack = new StackList<>(userStack);
                 break;
             default: 
                 typeStack = null; 
                 System.out.println("¡Ha ocurrido un error!");
+                break; 
         }
         return typeStack;
     }

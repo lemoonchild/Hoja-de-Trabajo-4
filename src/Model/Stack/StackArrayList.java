@@ -1,6 +1,8 @@
 package Model.Stack;
 import java.util.ArrayList;
 
+import Model.AbstractStack;
+
 /**
  * @author MAAG
  * Stack utilizado del repositorio de la seccion 10 creado por el catedratico Moises Alonso
@@ -9,7 +11,7 @@ import java.util.ArrayList;
  * Proposito: Stack con implementación ArrayList  
  */
 
-public class StackArrayList<T> implements IStack<T>{
+public class StackArrayList<T> extends AbstractStack<T>{
 
     private ArrayList<T> ourStack;
 

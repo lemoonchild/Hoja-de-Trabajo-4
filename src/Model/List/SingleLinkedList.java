@@ -1,11 +1,13 @@
-package Model;
+package Model.List;
+
+import Model.AbstractList;
 
 /**
  * @author MAAG
  * Tomado del reposotorio de la sección 10 creado por Moises Alonso 
  * Hoja de Trabajo #4
  */
-public class SingleLinkedList<T> implements IList<T> {
+public class SingleLinkedList<T> extends AbstractList<T> {
 
 	private int count;
     private Node<T> start;

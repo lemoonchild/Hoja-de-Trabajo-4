@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import Controller.Calculadora;
 import Controller.infixToPostfix;
-import Model.Stack.StackFactory;
 
 /**
  * @author 
@@ -18,30 +17,35 @@ public class UI {
     
     static Scanner sc = new Scanner(System.in); 
     static Controller.readFile readFile = new Controller.readFile();
-    static StackFactory factory = new StackFactory(); 
+    static Model.StackFactory factory = new Model.StackFactory(); 
     static Calculadora cal = new Calculadora(); 
 
     infixToPostfix infix = new infixToPostfix();
 
+    /**
+     * Main del programa 
+     */
     public static void main(String[] args) {
         
         menuPrincipal(); 
         
     }
 
+    /**
+     * Menu principal del usuario 
+     */
     public static void menuPrincipal(){
-        
 
-String operationsInfix = readFile._readfile("C:\\Users\\ncast\\OneDrive\\Documentos\\Universidad\\Semestres\\Tercer Semestre\\Algoritmos y Estructura de Datos\\Hojas de Trabajo\\Hoja-de-Trabajo-4\\src\\datos.txt");  
+    String operationsInfix = readFile._readfile("C:\\Users\\ncast\\OneDrive\\Documentos\\Universidad\\Semestres\\Tercer Semestre\\Algoritmos y Estructura de Datos\\Hojas de Trabajo\\Hoja-de-Trabajo-4\\src\\datos.txt");  
 
         System.out.println("\nExpresion Infija: " + operationsInfix);
         
         String raw_input = infixToPostfix.converterPostfix(operationsInfix).toString();
         
-        raw_input=raw_input.replace("[", " ");
-        raw_input=raw_input.replace("]", " ");
-        raw_input=raw_input.replace(",", " ");
-        raw_input=raw_input.replace(" ", " ");
+        raw_input = raw_input.replace("[", " ");
+        raw_input = raw_input.replace("]", " ");
+        raw_input = raw_input.replace(",", " ");
+        raw_input = raw_input.replace(" ", " ");
 
         System.out.println("Expresion Postfija: " + raw_input);
 
@@ -57,8 +61,6 @@ String operationsInfix = readFile._readfile("C:\\Users\\ncast\\OneDrive\\Documen
 
         
         System.out.println("\nResultado de la operacion: " + Calculadora.calculate(raw_input, factory.getTypeStack(op)));
-        
-
         
     }
 }

@@ -1,10 +1,14 @@
-package Model;
+package Model.List;
+
+import Model.AbstractList;
+
+
 /**
  * @author MAAG
  * Tomado del reposotorio de la sección 10 creado por Moises Alonso 
  * Hoja de Trabajo #4
  */
-public class DoubleLinkedList<T> implements IList<T> {
+public class DoubleLinkedList<T> extends AbstractList<T> {
 
 	private DoubleNode<T> start;
 	private DoubleNode<T> end;
@@ -194,5 +198,4 @@ public class DoubleLinkedList<T> implements IList<T> {
 		return count;
 	}
 
-	
 }

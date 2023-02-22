@@ -1,6 +1,8 @@
 package Model.Stack;
 
 import java.util.Vector;
+
+import Model.AbstractStack;
 /**
  * @author 
  * Madeline Castro 22473
@@ -8,7 +10,7 @@ import java.util.Vector;
  * Propósito: Stack con implementación Vector 
  */
 
- public class StackVector<T> implements IStack<T>{
+ public class StackVector<T> extends AbstractStack<T>{
 
         private Vector<T> myVector;
     

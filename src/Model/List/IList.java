@@ -1,4 +1,4 @@
-package Model;
+package Model.List;
 /**
  * @author MAAG
  * Tomado del reposotorio de la sección 10 creado por Moises Alonso 

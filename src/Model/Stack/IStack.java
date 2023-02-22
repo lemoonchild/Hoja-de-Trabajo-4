@@ -1,6 +1,5 @@
 package Model.Stack;
 
-import java.util.ArrayList;
 
 /**
  * @author MAAG
